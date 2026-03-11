@@ -111,6 +111,22 @@ label{
     width: 600px;
 }
 
+/* Task Details Page */
+.task-details {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.detail-row {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.detail-row strong {
+    display: inline-block;
+    min-width: 200px;
+}
+
 
 
 

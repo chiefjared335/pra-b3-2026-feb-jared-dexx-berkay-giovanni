@@ -1,4 +1,4 @@
-<?php require_once '../backend/config.php'; ?>
+<?php require_once __DIR__. '/../backend/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@ $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
     <h1>maak een taak aan</h1>
-    <form action="<?php echo $base_url; ?>backend/taskController.php" method="POST">
+    <form action="<?php echo $base_url; ?>../backend/taskController.php" method="POST">
     <div class= "form-group":>
     <label for="titel">taak:</label>
     <input type="text" id="titel" name="titel" placeholder="naam van de taak"> <br>

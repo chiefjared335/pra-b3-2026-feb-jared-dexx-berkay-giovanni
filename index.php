@@ -3,7 +3,7 @@
 
 <head>
     <title></title>
-    <?php require_once 'task/head.php'; ?>
+    <?php require_once 'tasks/head.php'; ?>
 
 </head>
 

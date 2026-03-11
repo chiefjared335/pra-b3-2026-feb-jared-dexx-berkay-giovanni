@@ -12,7 +12,7 @@ $afdeling = $_POST['afdeling'];
 if (empty($afdeling)) {
     die("Afdeling is verplicht");
 }
-
+echo $titel . " / " . $beschrijving . " / " . $afdeling;
 require_once 'conn.php';
 
 $query = "INSERT INTO taken (titel, beschrijving, afdeling)
@@ -25,5 +25,5 @@ $statement->execute([
 ":beschrijving" => $beschrijving,
 ":afdeling" => $afdeling
 ]);
-
+header("Location: ../index.php?msg=Melding aangepast");
 

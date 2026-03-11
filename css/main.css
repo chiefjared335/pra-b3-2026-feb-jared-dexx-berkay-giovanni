@@ -92,7 +92,7 @@ html{
 }
 
 .container{
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -109,6 +109,66 @@ label{
 
 .form-input{
     width: 600px;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content > * {
+    flex: 1;
+}
+
+.header-content .logo {
+    text-align: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Kanban Board */
+.kanban-board {
+    display: flex;
+    gap: 1rem;
+}
+
+.kanban-column {
+    flex: 1;
+}
+
+.column-header {
+    margin: 0 0 1rem 0;
+}
+
+/* Tasks List */
+.tasks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    margin-bottom: 1.5rem;
+}
+
+.task-item a {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.task-item p {
+    margin: 0.25rem 0;
 }
 
 /* Task Details Page */

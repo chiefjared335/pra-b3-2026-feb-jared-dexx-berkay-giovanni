@@ -25,5 +25,5 @@ $statement->execute([
 ":beschrijving" => $beschrijving,
 ":afdeling" => $afdeling
 ]);
-header("Location: ../index.php?msg=Melding aangepast");
+header("Location: ../tasks/index.php?msg=Melding aangepast");
 

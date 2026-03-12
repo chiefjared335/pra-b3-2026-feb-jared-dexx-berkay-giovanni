@@ -53,7 +53,15 @@
 
                 <div class="form-group">
                     <label for="afdeling">Afdeling: *</label>
-                    <input type="text" id="afdeling" name="afdeling" class="form-input" value="<?php echo htmlspecialchars($task['afdeling']); ?>" required>
+                    <select id="afdeling" name="afdeling" class="form-input" required>
+                        <option value="">– kies een afdeling –</option>
+                        <option value="personeel" <?php echo $task['afdeling'] === 'personeel' ? 'selected' : ''; ?>>personeel</option>
+                        <option value="horeca" <?php echo $task['afdeling'] === 'horeca' ? 'selected' : ''; ?>>horeca</option>
+                        <option value="techniek" <?php echo $task['afdeling'] === 'techniek' ? 'selected' : ''; ?>>techniek</option>
+                        <option value="inkoop" <?php echo $task['afdeling'] === 'inkoop' ? 'selected' : ''; ?>>inkoop</option>
+                        <option value="klantenservice" <?php echo $task['afdeling'] === 'klantenservice' ? 'selected' : ''; ?>>klantenservice</option>
+                        <option value="groen" <?php echo $task['afdeling'] === 'groen' ? 'selected' : ''; ?>>groen</option>
+                 </select>
                 </div>
 
                 <div class="form-group">

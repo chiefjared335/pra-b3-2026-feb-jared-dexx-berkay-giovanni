@@ -1,16 +1,18 @@
 <?php require_once '../backend/config.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nieuwe Taak</title>
     <?php require_once '../head.php'; ?>
 </head>
+
 <body>
+
 <?php
 require_once '../backend/conn.php';
-
 
 $query = "SELECT * FROM taken";
 $statement = $conn->prepare($query);
@@ -18,29 +20,51 @@ $statement->execute();
 $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-    <h1>maak een taak aan</h1>
-    <form action="../backend/taskController.php" method="POST">
-        <input type="hidden" name="action" value="create">
+<div class="container">
 
-        <div class= "form-group">
-        <label for="titel">taak:</label>
-        <input type="text" id="titel" name="titel" placeholder="naam van de taak"> <br>
-        <label for="beschrijving">beschrijving:</label>
-        <input type="text" id="beschrijving" name="beschrijving" placeholder="beschrijving van de taak"> <br>
-        <label for="afdeling">afdeling:</label>
-        <select name="afdeling" id="afdeling">
-            <option value="">– kies een afdeling –</option>
-            <option value="personeel">personeel</option>
-            <option value="horeca">horeca</option>
-            <option value="techniek">techniek</option>
-            <option value="inkoop">inkoop</option>
-            <option value="klantenservice">klantenservice</option>
-            <option value="groen">groen</option>
-        </select> <br>
+<header class="site-header">
+    <h1>Nieuwe Taak Aanmaken</h1>
+</header>
 
-    submit <input type="submit" value="submit">
+<div class="task-edit-form">
+
+<form action="../backend/taskController.php" method="POST">
+
+<input type="hidden" name="action" value="create">
+
+<div class="form-group">
+<label for="titel">Taak:</label>
+<input type="text" id="titel" name="titel" class="form-input" placeholder="Naam van de taak">
+</div>
+
+<div class="form-group">
+<label for="beschrijving">Beschrijving:</label>
+<input type="text" id="beschrijving" name="beschrijving" class="form-input" placeholder="Beschrijving van de taak">
+</div>
+
+<div class="form-group">
+<label for="afdeling">Afdeling:</label>
+<select name="afdeling" id="afdeling" class="form-input">
+<option value="">– kies een afdeling –</option>
+<option value="personeel">Personeel</option>
+<option value="horeca">Horeca</option>
+<option value="techniek">Techniek</option>
+<option value="inkoop">Inkoop</option>
+<option value="klantenservice">Klantenservice</option>
+<option value="groen">Groen</option>
+</select>
+</div>
+
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">Taak aanmaken</button>
+</div>
+
 </form>
+
+</div>
+
 </div>
 
 </body>
 </html>
+```

@@ -1,6 +1,9 @@
 <?php
-    $id = $_GET["id"];
-    if (!isset($id)) die("Task ID not set");
+$id = $_GET["id"] ?? null;
+
+if (!$id) {
+    die("Task ID not set");
+}
 
     require_once '../backend/conn.php';
     $query = "SELECT * FROM taken WHERE id = :id";

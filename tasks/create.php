@@ -26,6 +26,8 @@ $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
     <h1>Nieuwe Taak Aanmaken</h1>
 </header>
 
+
+
 <div class="task-edit-form">
 
 <form action="../backend/taskController.php" method="POST">
@@ -63,8 +65,8 @@ $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 </div>
 
+<a href="../index.php" class="btn btn-secondary">Terug naar overzicht</a>
 </div>
 
 </body>
 </html>
-```

@@ -20,8 +20,7 @@ $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <h1>maak een taak aan</h1>
     <form action="../backend/taskController.php" method="POST">
-        <input type="hidden" name="action" value="update">
-        <input type="hidden" name="id" value="<?php echo htmlspecialchars($task['id']); ?>">
+        <input type="hidden" name="action" value="create">
 
         <div class= "form-group">
         <label for="titel">taak:</label>

@@ -456,6 +456,14 @@ body{
 .btn-secondary:hover {
     background-color: #b5b5b5;
 }
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
 
 .form-actions {
     margin-top: 2rem;

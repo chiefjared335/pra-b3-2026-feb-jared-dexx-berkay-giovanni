@@ -95,6 +95,14 @@
                     <a href="details.php?id=<?php echo $id; ?>" class="btn btn-secondary">Annuleren</a>
                 </div>
             </form>
+            <hr>
+         <form action="<?php echo $base_url; ?>/backend/taskController.php" method="POST">
+            <input type="hidden" name="action" value="delete">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="submit" value="Verwijderen" class="btn btn-delete confirm" onclick="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
+        </form>
+
+
         </div>
 
     </div>

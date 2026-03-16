@@ -99,8 +99,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         ":beschrijving" => $beschrijving,
         ":afdeling" => $afdeling
     ]);
-    header("Location: ../tasks/index.php?msg=Melding aangepast");
+    header("Location: ../index.php?msg=Melding aangepast");
 }
 
 // If not a valid POST request, redirect to index
 header("Location: ../index.php");
+
+// Handle task deletion
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
+    $id = $_POST['id'] ?? '';
+
+    if (empty($id)) {
+        die("Geen taak ID opgegeven.");
+    }
+
+    try {
+        $query = "DELETE FROM taken WHERE id = :id";
+        $stmt = $conn->prepare($query);
+        $stmt->execute([":id" => $id]);
+
+        header("Location: ../index.php?msg=Taak verwijderd");
+        exit;
+    } catch (PDOException $e) {
+        die("Database fout: " . $e->getMessage());
+    }
+}
+
+// If not a valid POST request, redirect to index
+header("Location: ../index.php");
+exit;

@@ -1,4 +1,4 @@
-<?php require_once '../backend/config.php'; ?>
+<?php require_once '../backend/config.example.php'; ?>
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -55,6 +55,11 @@ $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
 <option value="klantenservice">Klantenservice</option>
 <option value="groen">Groen</option>
 </select>
+</div>
+
+<div class="form-group">
+<label for="deadline">Deadline:</label>
+<input type="date" id="deadline" name="deadline" class="form-input">
 </div>
 
 <div class="form-actions">
